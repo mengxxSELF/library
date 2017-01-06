@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        div{width: 200px;height: 200px;background: skyblue;
+        opacity: 0.6;
+            filter: alpha(opacity=30);
+        }
+    </style>
+</head>
+<body>
+<div class="div"></div>
+<div class="div div1  "></div>
+<div class="div div3 div2"></div>
+<div class="div div4 div2"></div>
+<div class="div div5 div2"></div>
+
+<script src="utils.js"></script>
+<script>
+    var domAry = utils.getByClass('div  div2 div4');
+    console.log(domAry)
+    utils.addClass(domAry[0],'addClass addCs2')
+    var addDiv =utils.getByClass('addClass');
+    console.log(utils.getByClass('addClass'))
+    utils.removeClass(addDiv[0],'addCs2 div4')
+
+    console.log(utils.getCss(domAry[0],'opacity'))
+    console.log(utils.getCss(domAry[0],'width'))
+
+    utils.setCss(utils.getByClass('div')[3],'background','red')
+
+    utils.setGroupCss(utils.getByClass('div')[0],{
+        'opacity':0.6,
+        'width':500,
+        'background':'blue'
+    })
+
+
+</script>
+</body>
+</html>
