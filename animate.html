@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>运动库</title>
+    <style>
+        div{width:200px;height:200px;background: skyblue;border-radius: 10px;
+        position: fixed; left: 10px; top: 20px;;
+        }
+    </style>
+</head>
+<body>
+<div></div>
+<script src="../utils.js"></script>
+<script src="animate.js"></script>
+<script>
+    var oBox =document.getElementsByTagName('div')[0];
+
+    animate({
+        id:oBox,
+        effect:5,// 'linea' ['' ''] ['Elastic','easeOut'],
+        duration:2000,
+        target:{
+            left:200,
+            top:90,
+            opacity:0.5
+        },
+        cb: function () {
+            this.style.background='red';
+        }
+    })
+
+</script>
+</body>
+</html>
