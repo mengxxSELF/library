@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        div{display: block;width: 100px;height: 100px;  background: skyblue;
+            text-align: center; line-height: 100px; color: #fff; font-weight: bold; }
+    </style>
+</head>
+<body>
+<div>div1</div>
+<script src="event.js"></script>
+<script>
+    var oDiv = document.getElementsByTagName('div')[0];
+
+    on(oDiv,'mouseover',fn1);
+    on(oDiv,'mouseover',fn2);
+    on(oDiv,'mouseover',fn3);
+    off(oDiv,'mouseover',fn1);
+    on(oDiv,'click',fn1);
+    on(oDiv,'click',fn2);
+    on(oDiv,'click',fn3);
+    off(oDiv,'click',fn2);
+
+    function fn1(){console.log('1',this)}
+    function fn2(){console.log('2',this)}
+    function fn3(){console.log('3',this)}
+</script>
+</body>
+</html>
