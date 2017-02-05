@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>script</title>
+</head>
+<body>
+<script src="arrayWays.js"></script>
+<script>
+    var ary = [1,2,3,4,5];
+    var ends = ary.filter(function (item,index) {
+        return index>2;
+    });
+    console.log(ends);
+    ary.forEach(function (item,index) {
+        console.log(index,item);
+    });
+    var end3 = ary.map(function (item,index) {
+        console.log(index,item);
+        return index;
+    });
+    console.log(end3);
+
+
+</script>
+</body>
+</html>
