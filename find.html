@@ -7,21 +7,38 @@
     <title>使4-8的li变色</title>
     <style>
         *{margin:0;padding:0;}
-        div{width: 930px; margin: 10px auto;}
-        ul{width:300px;display: inline-block; }
+        div{width:1100px; margin: 10px auto;}
+        ul{width:200px;display: inline-block; }
         li{height: 20px;margin:5px 0;list-style: none;  border-radius: 10px;text-align: center;
             background: skyblue; color: #fff; font-weight: bold; }
         li:hover{  background: silver !important;}
         p{width: 100%; text-align: center;}
         .css li:nth-of-type(n+4){background-color: sandybrown;}
         .css li:nth-of-type(n+9){background-color: skyblue;}
+        .css2 li:nth-of-type(n+4):nth-of-type(-n+8){background: saddlebrown}
         li.on{background: seashell;}
         li.now{background: bisque;}
+        .js2 li.now{background: salmon;}
     </style>
 </head>
 <body>
 <div>
     <ul class="css">
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+        <li>4</li>
+        <li>5</li>
+        <li>6</li>
+        <li>7</li>
+        <li>8</li>
+        <li>9</li>
+        <li>10</li>
+        <p>
+            CSS操作
+        </p>
+    </ul>
+    <ul class="css2">
         <li>1</li>
         <li>2</li>
         <li>3</li>
@@ -64,6 +81,19 @@
         <li>10</li>
         <p>js原生</p>
     </ul>
+    <ul class="js2">
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+        <li>4</li>
+        <li>5</li>
+        <li>6</li>
+        <li>7</li>
+        <li>8</li>
+        <li>9</li>
+        <li>10</li>
+        <p>js原生</p>
+    </ul>
 </div>
 </body>
 <script>
@@ -72,6 +102,14 @@
     for(var i=3;i<8;i++){
         alis[i].className='now';
     }
+
+    var ali = document.getElementsByClassName('js2')[0].getElementsByTagName('li');
+    var alis2 = [].slice.call(ali,3,8);// 3 4 5 6 7
+    for(var i= 0,len=alis2.length;i<len;i++){
+        alis2[i].className='now';
+    }
+
+
 </script>
 <script src="../jquery.3.0.0.min.js"></script>
 <script>
