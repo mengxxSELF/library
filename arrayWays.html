@@ -8,19 +8,43 @@
 <script src="arrayWays.js"></script>
 <script>
     var ary = [1,2,3,4,5];
-    var ends = ary.filter(function (item,index) {
+    var ends = ary.myFilter(function (item,index) {
         return index>2;
     });
     console.log(ends);
-    ary.forEach(function (item,index) {
+    ary.myForEach(function (item,index) {
         console.log(index,item);
     });
-    var end3 = ary.map(function (item,index) {
+    var end3 = ary.myMap(function (item,index) {
         console.log(index,item);
         return index;
     });
     console.log(end3);
 
+
+    function add(){
+        var arg = arguments;
+        arg.__proto__ = Array.prototype;
+        var total=null;
+        for(var i=0,len=arg.length;i<len;i++){
+            if(!isNaN(Number(arg[i]))){
+                total+= Number(arg[i]);
+            }
+        }
+        return total;
+    };
+    console.log(add(1,2,3))
+
+    function add2(...arg){
+        var total=null;
+        for(var i=0,len=arg.length;i<len;i++){
+            if(!isNaN(Number(arg[i]))){
+                total+= Number(arg[i]);
+            }
+        }
+        return total;
+    };
+    console.log(add2(1,2,3))
 
 </script>
 </body>
